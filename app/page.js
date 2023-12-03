@@ -21,7 +21,7 @@ export function ParkingCard({
   )}`;
 
   return (
-    <div className="rounded-lg bg-blue-100 m-4 p-4 shadow-lg transform transition duration-500 ease-in-out hover:scale-105">
+    <div className="dark:text-gray-700 rounded-lg bg-blue-100 m-4 p-4 shadow-lg transform transition duration-500 ease-in-out hover:scale-105">
       <div className="flex flex-row justify-between">
         <div>
           <div className="relative group">
@@ -92,7 +92,10 @@ export default function Home() {
           <h1 className="text-2xl font-semibold mb-6">
             Where would you like to go today?
           </h1>
-          <form onSubmit={onSubmitAddressForm} className="space-y-4">
+          <form
+            onSubmit={onSubmitAddressForm}
+            className="dark:text-gray-700 space-y-4"
+          >
             <label className="block">
               <input
                 type="text"
