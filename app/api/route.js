@@ -37,8 +37,6 @@ async function getCoordinates(address) {
   }
 
   const lot = await res.json();
-  console.log(formattedAddress);
-  console.log(lot);
   const lat = lot.results[0].geometry.location.lat;
   const long = lot.results[0].geometry.location.lng;
 
@@ -47,9 +45,7 @@ async function getCoordinates(address) {
 
 async function getParkingLots(latitude, longitude, radius) {
   const token = await getToken();
-  console.log(token.result.token);
   const ROUTE_URL = `https://api.iq.inrix.com/lots/v3?point=${latitude}%7C${longitude}&radius=${radius}`;
-  console.log(`${ROUTE_URL}&accessToken=${token.result.token}`);
   const res = await fetch(`${ROUTE_URL}&accessToken=${token.result.token}`);
 
   if (!res.ok) {
